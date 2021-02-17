@@ -1,5 +1,14 @@
-<div>
-    <h2>In Servers Component</h2>
-    <app-server></app-server>
-    <app-server></app-server>
-</div>
+<label class="label">Server Name</label>
+<!-- pass input text via event binding -->
+<label class="label">With Event Binding</label>
+<input class="form-control" type="text" (input)="updateServerName($event)" />
+<!-- pass input text via 2 way binding -->
+<label class="label">With 2 way Binding</label>
+<input class="form-control" type="text" [(ngModel)]="serverName" />
+<p>{{serverName}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServers" (click)="createNewServer()">
+  Add New Server
+</button>
+<!-- <app-server></app-server>
+<app-server></app-server> -->
+<app-server *ngFor="let server of servers"></app-server>

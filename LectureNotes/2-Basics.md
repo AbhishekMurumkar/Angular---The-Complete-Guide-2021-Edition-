@@ -143,6 +143,55 @@
     
     1. String Interpolation: display variable value in html, which is present in component.ts file. we {{variable_name}} following notation for string interpolation
    
-    2. Property Binding: 
+    2. Property Binding: set the html properties according to value present in business logic/typescript and 
    
-    3. Two way databinding:
+    3. Event databinding: this is used to pass the event from the html to typescript
+
+    4. 2 Way Databinding: this is combination of event and property binding,i.e : the data is passed to and fro typescript and html
+---
+# [Directives](#Directives)
+
+* Instructions given to dom
+* Components are example for directives, which instructs angular to load a paticular html view when we see a selector of a component (hence component are directives with a template)
+* ## Built In Directives
+  * ## ngIf
+    * this is a structural directive which means it manipulates DOM in run time, thats why we always need to use it as ```*ngIf='expression'```. This directive when expression is false will never create the dom element(note the element is not hidden as you think).
+  * ## ngIf with else condition : 
+    * in order to have a else part in the logical If directive you need use a **_Local Reference Variable_**
+        ```html
+        <p *ngIf='condition; else localVar'>..</p>
+        <ng-template #localVar> 
+            <!-- ng -template is built in component in angular to load dynamic component without declaration which takes local variable with #-->
+            <p>someout output in view</p>
+        </ng-template>
+        ```
+  * ## ngStyle : 
+    * this is used to not only style the component but also style them with some logical expression
+
+        In html:
+        ```html
+        <p [ngStyle]='{ backgroundColor: getColor() }'>..</p>
+        ```
+        In typescript:
+        ```typescript
+        getColor(){
+            return expression?'green':'red'
+        }
+        ```
+  * ## ngClass :
+    * Append classes dynamically
+
+        In html:
+        ```html
+        <p [ngClass]='{ classname: expression }'>..</p>
+        <!-- example -->
+        <p [ngClass]='{ online: this.currentStatus=="online" }'>
+        ```
+
+  * ## ngFor :
+    * Append classes dynamically
+
+        In html:
+        ```html
+        <p *ngFor='let i in array; let i=index'>..</p>
+        ```
