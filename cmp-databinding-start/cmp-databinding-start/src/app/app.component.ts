@@ -25,4 +25,12 @@ export class AppComponent {
       content:content
     })
   }
+
+  changeFirstName(){
+    this.serverElements[0].name="Changed name"
+  }
+
+  deleteFirstElement(){
+    this.serverElements.splice(0,1);
+  }
 }

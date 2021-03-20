@@ -5,9 +5,12 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="changeFirstName()">change_first_Name</button>
+      <button class="btn btn-danger" (click)="deleteFirstElement()">Delete First Element</button>
       <app-server-element 
         *ngFor="let i of serverElements" 
         [element]="i"
+        [name]="i.name"
         ></app-server-element>
     </div>
   </div>

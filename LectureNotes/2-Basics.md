@@ -153,6 +153,8 @@
 
 * Instructions given to dom
 * Components are example for directives, which instructs angular to load a paticular html view when we see a selector of a component (hence component are directives with a template)
+* **_This is the best way of accessing and manipulating the DOM content_**
+
 * ## Built In Directives
   * ## ngIf
     * this is a structural directive which means it manipulates DOM in run time, thats why we always need to use it as ```*ngIf='expression'```. This directive when expression is false will never create the dom element(note the element is not hidden as you think).

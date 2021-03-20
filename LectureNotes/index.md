@@ -1,4 +1,5 @@
 # Glossary
+
 1. [PreConcepts](./1-GettingStarted.md#PreConcepts)
 2. [Getting Started](./1-GettingStarted.md#CourseStructure)
 3. [Typescript](./1-GettingStarted.md#TypeScript)
@@ -7,3 +8,6 @@
 6. [Databinding in Angular](./2-Basics.md#AngularDatabinding)
 7. [Directives](./2-Basics.md#Directives)
 8. [View Encapsulation](./5-Databinding&Component.md#ve)
+9. [Local Reference in a Template](./5-Databinding&Component.md#localReference)
+10. [NgContent](./5-Databinding&Component.md#ngContent)
+11. [Life Cycle of a component](./5.1-ComponentLifeCycle.md##lifeCycle)

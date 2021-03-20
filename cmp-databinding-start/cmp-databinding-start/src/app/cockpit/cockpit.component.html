@@ -1,16 +1,36 @@
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-sm-12">
       <p>Add new Servers or blueprints!</p>
       <label>Server Name</label>
-      <input type="text" class="form-control" [(ngModel)]="elementName">
+      <!-- <input type="text" class="form-control" [(ngModel)]="elementName"> -->
+
+      <!-- below demonstrates creating of local reference variable -->
+      <input 
+        type="text" 
+        class="form-control" 
+        #elementName>
       <label>Server Content</label>
       <input type="text" class="form-control" [(ngModel)]="elementContent">
+      
       <br>
+      
+      <!-- <button
+        class="btn btn-primary"
+        (click)="onAddServer()">Add Server</button> -->
+
+      <!-- below demonstrates the passing of local reference variable from template to controller on an event(which is button click)  -->
+      <!-- <button
+        class="btn btn-primary"
+        (click)="onAddServer(elementName)"
+      >Add Server</button>   -->
+
+      <!-- below demonstrates direct accessing of local reference variable via viewchild decorator -->
       <button
         class="btn btn-primary"
-        (click)="onAddServer()">Add Server</button>
+        (click)="onAddServer()"
+        >Add Server</button>    
       <button
         class="btn btn-primary"
-        (click)="onAddBlueprint()">Add Server Blueprint</button>
+        (click)="onAddBlueprint(elementName)">Add Server Blueprint</button>
     </div>
   </div>
