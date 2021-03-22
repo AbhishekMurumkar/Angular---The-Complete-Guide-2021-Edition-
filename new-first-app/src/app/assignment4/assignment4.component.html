@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Assingment 4</h1>
+    <ol>
+      <li>create 3 comps: Game controller, odd and even</li>
+      <li>Game controller should have buttons start and stop</li>
+      <li>
+        on start, an event (holding the increment number) should be emitted for
+        each second (ref = setInterval())
+      </li>
+      <li>this event must be listenable from outside of the component</li>
+      <li>when stopped, no more events should be omitted</li>
+      <li>
+        hence for each event, create a component odd or event based on current
+        iterator's value
+      </li>
+      <li>
+        output the odd and event component with different styles along with
+        their number
+      </li>
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12 separate">
+    <button class="btn btn-success" (click)="start()" [disabled]="myCounter!=0">Start</button>
+    <button class="btn btn-warning"  (click)="pause()" [disabled]="myCounter==0">Pause</button>
+    <button class="btn btn-danger"  (click)="stop()" [disabled]="myCounter==0">Stop</button>
+    <button class="btn btn-primary"  (click)="restart()" [disabled]="myCounter==0">restart</button>    
+  </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <div *ngFor="let i of myElements" class="counters">
+            <app-odd *ngIf="i%2==1" value={{i}}></app-odd>
+            <app-even *ngIf="i%2==0" value={{i}}></app-even>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.counters{
+    width: 5%;
+    padding:5px;
+    float:left;
+    text-align: center;
+}
+.separate > * {
+    margin: 5px;
+}

@@ -1,12 +1,12 @@
 <div class="row">
-    <div class="col-xs-12">
-        <button class="btn btn-success">Add Recipe</button>
-    </div>
+  <div class="col-xs-12">
+    <button class="btn btn-success">Add Recipe</button>
+  </div>
 </div>
-<hr>
+<hr />
 <div class="row">
-    <div class="col-xs-12" style="width: 100% !important;">
-        <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipies">
+  <div class="col-xs-12" style="width: 100% !important">
+    <!-- <a href="#" class="list-group-item clearfix" *ngFor="let recipe of recipies">
             <div class="float-left">
                 <h3 class="list-group-item-heading">{{recipe.name}}</h3>
                 <p class="list-group-item-text">{{recipe.description}}</p>
@@ -15,6 +15,13 @@
                 <img [src]="recipe.imagePath" alt="{{recipe.name}}" class="img-responsive" style="max-height:100px;">
             </span>
         </a>
-        <app-recipe-item></app-recipe-item>
+        <app-recipe-item></app-recipe-item> -->
+    <div *ngFor="let recipeElement of recipies; let i = index">
+      <app-recipe-item
+        [recipe]="recipeElement"
+        (click)="setActiveRecipe(i)"
+        [myClass]="{ activeRecipe: i == activeRecipeIndex }"
+      ></app-recipe-item>
     </div>
+  </div>
 </div>

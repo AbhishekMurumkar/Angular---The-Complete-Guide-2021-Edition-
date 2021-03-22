@@ -11,3 +11,5 @@
 9. [Local Reference in a Template](./5-Databinding&Component.md#localReference)
 10. [NgContent](./5-Databinding&Component.md#ngContent)
 11. [Life Cycle of a component](./5.1-ComponentLifeCycle.md##lifeCycle)
+12. [NgContent with Content child Hook](./5-Databinding&Component.md#contentChild)
+13. [Navigation with Events and NgIf](./6-Databinding.md#event-ngif)

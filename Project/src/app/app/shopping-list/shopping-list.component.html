@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12" style="width:100% !important">
-        <app-shopping-edit></app-shopping-edit>
+        <app-shopping-edit (addIngredientEvent)="addIngredient($event)"></app-shopping-edit>
         <hr>
         <ul class="list-group">
             <a href="#" class="list-group-item" style="cursor: pointer !important;" *ngFor="let ing of ingredients">

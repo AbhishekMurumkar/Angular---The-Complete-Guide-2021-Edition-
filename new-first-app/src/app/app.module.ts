@@ -9,6 +9,9 @@ import { ServersComponent } from './servers/servers.component';
 import { Assignment1Component } from './assignment1/assignment1.component';
 import {SuccessComponent} from "./assignment1/success/success.component";
 import {WarnComponent} from "./assignment1/warn/warn.component";
+import { Assignment4Component } from './assignment4/assignment4.component';
+import { OddComponent } from './assignment4/odd/odd.component';
+import { EvenComponent } from './assignment4/even/even.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import {WarnComponent} from "./assignment1/warn/warn.component";
     ServersComponent,
     Assignment1Component,
     SuccessComponent,
-    WarnComponent
+    WarnComponent,
+    Assignment4Component,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [Assignment4Component]
 })
 export class AppModule { }

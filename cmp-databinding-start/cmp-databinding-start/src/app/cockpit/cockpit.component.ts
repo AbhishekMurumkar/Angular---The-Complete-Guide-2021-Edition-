@@ -1,13 +1,13 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-cockpit',
+  selector   : 'app-cockpit',
   templateUrl: './cockpit.component.html',
-  styleUrls: ['./cockpit.component.css']
+  styleUrls  : ['./cockpit.component.css']
 })
 export class CockpitComponent implements OnInit {
 
-  @Output() serverCreated = new EventEmitter<{serverName:string,serverContent:string}>();
+  @Output() serverCreated    = new EventEmitter<{serverName:string,serverContent:string}>();
   @Output() blueprintCreated = new EventEmitter<{blueprintName:string,blueprintContent:string}>();
 
   @ViewChild('elementName',{static:true}) elementName: ElementRef;
@@ -36,13 +36,13 @@ export class CockpitComponent implements OnInit {
     // this.elementName = elementName.value;
     this.serverCreated.emit({serverName:this.elementName.nativeElement.value,serverContent:this.elementContent});
     // this.elementName="";
-    this.elementContent="";
+    this.elementContent = "";
   }
 
   onAddBlueprint(elementName:HTMLInputElement) {
     // this.elementName = elementName.value;
     this.blueprintCreated.emit({blueprintName:this.elementName.nativeElement.value,blueprintContent:this.elementContent});
     // this.elementName="";
-    this.elementContent="";
+    this.elementContent = "";
   }
 }

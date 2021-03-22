@@ -152,8 +152,13 @@ In component ts file,
 
 # [NgContent Hook](ngContent)
 
-* This hook is used to show the html content present in our custom 
-angular tags to browser/front end..
-
+* This hook is used to show the html content present in our custom angular tags to browser/front end..
 * In general the html content present in between the custom html tags are lost, Angular doesnt care about them.
 * If you use this hook then angular will display this HTML as well
+
+# [NgContent With ContentChild Hooks](contentChild)
+
+* The above hook is used to access the elements which are directly present in hook
+* sometimes we need to access the HTML elements which are rendered from the Ng-Content Hook(in child or other components)
+* This is where we use this contentChild Hook
+* This is present in ```@angular/core```
