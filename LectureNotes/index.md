@@ -13,3 +13,13 @@
 11. [Life Cycle of a component](./5.1-ComponentLifeCycle.md##lifeCycle)
 12. [NgContent with Content child Hook](./5-Databinding&Component.md#contentChild)
 13. [Navigation with Events and NgIf](./6-Databinding.md#event-ngif)
+14. [Directives Deep Dive](./7-DirectivesDeepDive.md)
+    * Working on Attribute Directives to access HTML/DOM elements safely:
+        * Renderer
+        * HostLinstener
+        * HostBinding
+    * Using the Custom directive and property binding on same elemet = Binding on Custom Directive's Properties
+    * why * is required in structural directives
+    * building custom structural directive
+        * #### Using Set Keyword: Used to execute a method whenever a property of HTML element changes.
+    * NgSwitch Directive:

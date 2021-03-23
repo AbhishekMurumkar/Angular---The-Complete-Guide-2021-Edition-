@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+
+      <h2 *appUnless="!onlyOdd">Showing Odd numbers with Custom Structural Directives</h2>
+      <h2 *appUnless="onlyOdd">Showing Even numbers with Custom Structural Directives</h2>
+
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li
+          class="list-group-item"
+          [ngClass]="{'odd':i%2==1}"
+          [ngStyle]="{ 'backgroundColor':(i%2==1)?'yellow':'blue' }"
+          *ngFor="let i of odd">
+          {{i}}
+        </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li
+          class="list-group-item"
+          [ngClass]="{'even':i%2==0}"
+          [ngStyle]="{ 'backgroundColor':(i%2==1)?'yellow':'blue' }"          
+          *ngFor="let i of even">
+          {{i}}
+        </li>
+        </div>
+        
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+    </div>
+  </div>
+  <h2 appCustomDirective>Styling with the custom Directive:</h2>
+  <h2 
+  appBetterCustomDirective
+  [defaultColor]='"yellow"'
+  [highlightColor]='"green"'
+  >Styling with the Renderer</h2>
+
+  <h2>Ng Switch Example</h2>
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Block 1</p>
+    <p *ngSwitchCase="10">Block 2</p>
+    <p *ngSwitchCase="15">Block 3</p>
+    <p *ngSwitchCase="25">Block 4</p>            
+  </div>
+</div>
