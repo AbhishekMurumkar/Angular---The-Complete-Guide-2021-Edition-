@@ -1,13 +1,11 @@
 import { Component, ContentChild, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Account } from '../Account';
-import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-logger-form',
   templateUrl: './logger-form.component.html',
   styleUrls: ['./logger-form.component.css'],
   providers:[
-    LoggerService
   ]
 })
 export class LoggerFormComponent implements OnInit {
@@ -17,7 +15,7 @@ export class LoggerFormComponent implements OnInit {
 
   @Output() addAccount=new EventEmitter<Account>();
 
-  constructor(private logger:LoggerService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -27,7 +25,7 @@ export class LoggerFormComponent implements OnInit {
     let status = this.status;
     let newAcc = new Account(name,status);
     // console.log(newAcc,status);
-    this.logger.logToConsole("New Account Initialization: "+JSON.stringify(newAcc)+", status: "+status);
+    // this.logger.logToConsole("New Account Initialization: "+JSON.stringify(newAcc)+", status: "+status);
     this.addAccount.emit(newAcc);
     this.name.nativeElement.value="";
     this.status="active";

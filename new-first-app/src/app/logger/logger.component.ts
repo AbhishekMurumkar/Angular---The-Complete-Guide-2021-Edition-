@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Account } from "./Account";
-import { Accounts } from './accounts.service';
+import { Accounts } from './accounts.service'; // this is a root level service
 import { LoggerService } from './logger.service';
+// above line creates service at component level,
+// we are saying so because it is initialized in providers property of current component
+// this means newly created service object is passed to current component and to all of its child component automatically
 @Component({
   selector: 'app-logger',
   templateUrl: './logger.component.html',
   styleUrls: ['./logger.component.css'],
   providers:[
-    LoggerService,
-    Accounts
+    LoggerService
   ]
 })
 

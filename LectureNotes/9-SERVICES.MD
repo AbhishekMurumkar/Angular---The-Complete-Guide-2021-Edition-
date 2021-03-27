@@ -65,4 +65,9 @@ There are cases where we might execute same piece code in different components, 
 
 # Injecting Services into Another Services.
 
+Sometimes we need use services inside another , for this purpose declare required all of the services in ```providers``` property of injective component, then provide some meta data to distinguish among services just like we do for components (via component directive)
 
+the differentiation is done via ```Injectable``` decorator(present in angular/core). Thus any class having this decorator means
+1. this respective class is injectable
+2. ## You dont add Injectable to services you want to inject but reciving service, service variant you want to inject into current service.
+3. Example In new-app/logger project we have 2 services : logger & accounts, in this case accounts makes use of logger service. So we need to declare Injectable in the Accounts service(receiver) but not in logger (which is to be injected)

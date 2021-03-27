@@ -15,6 +15,8 @@ import { EvenComponent } from './assignment4/even/even.component';
 import { LoggerComponent } from './logger/logger.component';
 import { LoggerFormComponent } from './logger/logger-form/logger-form.component';
 import { LoggerListComponent } from './logger/logger-list/logger-list.component';
+import { Accounts } from "./logger/accounts.service";
+import { LoggerService } from './logger/logger.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { LoggerListComponent } from './logger/logger-list/logger-list.component'
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [Accounts,LoggerService],
   bootstrap: [LoggerComponent]
 })
 export class AppModule { }
