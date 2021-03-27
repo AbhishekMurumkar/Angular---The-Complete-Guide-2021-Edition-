@@ -71,3 +71,12 @@ the differentiation is done via ```Injectable``` decorator(present in angular/co
 1. this respective class is injectable
 2. ## You dont add Injectable to services you want to inject but reciving service, service variant you want to inject into current service.
 3. Example In new-app/logger project we have 2 services : logger & accounts, in this case accounts makes use of logger service. So we need to declare Injectable in the Accounts service(receiver) but not in logger (which is to be injected)
+
+# Using Services for CROSS-COMPONENT COMMUNICATION:
+
+this generally including listening to events made in one component into another Example: see files [Account Service]("../new-first-app/src/app/logger/accounts.service.ts) and [typescript file](../new-first-app/src/app/logger/logger-form/logger-form.component.ts)
+
+* In Accounts.service.ts, you can see we create event emitter with name as : statusUpdated
+* this event is emitted whenever a status update method is called and executed
+* In typescript file, you can see that in ```constructor```, you can see that we are listening the events from above service via ```service-name```.**subscribe()** method
+* thus whenever source (in our case account service) emits an event, the listener's (in our case typescript file) subscribe code is executed.

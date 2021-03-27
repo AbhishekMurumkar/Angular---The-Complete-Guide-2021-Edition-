@@ -13,9 +13,9 @@ import { Accounts } from '../accounts.service';
 export class LoggerListComponent implements OnInit {
 
   @Output('updateAccount') updateAccount=new EventEmitter<Account>();
-  @Input('loggerList') loggerList:Array<Account>;
+  // @Input('loggerList') loggerList:Array<Account>;
   // loggingService = new LoggerService(); this should not be done
-
+  loggerList : Array<Account>;
   statusList:Array<string>=[
     'active',
     'inactive',
@@ -26,6 +26,7 @@ export class LoggerListComponent implements OnInit {
   constructor( private accountsService:Accounts) { }
 
   ngOnInit(): void {
+    this.loggerList = this.accountsService.accounts;  
   }
 
   setNewStatus(acc:number,status:string){
