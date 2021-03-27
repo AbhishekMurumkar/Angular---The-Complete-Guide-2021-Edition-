@@ -1,0 +1,16 @@
+
+<div class="list-start">
+    <div class="list-block" *ngFor="let i of loggerList; let ind = index">
+        <h2 class="accName">
+            {{i.name}}
+        </h2>
+        <p class="accStatus">
+            This Account's Current Status is:{{i.status}}
+        </p>
+        <div class="btn-list">
+            <button class="btn btn-lg brn-secondary" *ngFor='let j of statusList' [disabled]='i.status == j' (click)="setNewStatus(ind,j)">
+                Set to {{ j | titlecase }}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <app-logger-form (addAccount)="onAccountAdded($event)"></app-logger-form>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <app-logger-list [loggerList]="accounts"></app-logger-list>
+    </div>
+    <div class="col-sm-1"></div>
+</div>

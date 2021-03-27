@@ -1,0 +1,12 @@
+.list-start{
+    margin:5% 0px;
+}
+.list-block{
+    margin: 3% 1%;
+    border: 1px solid black;
+    padding: 3%;
+}
+.btn-list > *{
+    margin: 10px;
+    padding: auto;
+}

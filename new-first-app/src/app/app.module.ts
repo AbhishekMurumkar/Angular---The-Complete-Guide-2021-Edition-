@@ -12,6 +12,9 @@ import {WarnComponent} from "./assignment1/warn/warn.component";
 import { Assignment4Component } from './assignment4/assignment4.component';
 import { OddComponent } from './assignment4/odd/odd.component';
 import { EvenComponent } from './assignment4/even/even.component';
+import { LoggerComponent } from './logger/logger.component';
+import { LoggerFormComponent } from './logger/logger-form/logger-form.component';
+import { LoggerListComponent } from './logger/logger-list/logger-list.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { EvenComponent } from './assignment4/even/even.component';
     WarnComponent,
     Assignment4Component,
     OddComponent,
-    EvenComponent
+    EvenComponent,
+    LoggerComponent,
+    LoggerFormComponent,
+    LoggerListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
   providers: [],
-  bootstrap: [Assignment4Component]
+  bootstrap: [LoggerComponent]
 })
 export class AppModule { }
