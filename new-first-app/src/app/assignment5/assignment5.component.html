@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10" style="margin: 2%; padding: 20px;">
+            <h2>Active Users</h2>
+            <ul class="list-group">
+                <ng-container *ngFor="let i of users;let ind = index;">
+                    <li class="list-group-item" (click)="updateStatus(ind)" *ngIf=" i.isOnline ">{{i.name}}</li>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10"  style="margin: 2%; padding: 20px;">
+            <h2>Inactive Users</h2>
+            <ul class="list-group">
+                <ng-container *ngFor="let i of users;let ind = index;">
+                    <li class="list-group-item" (click)="updateStatus(ind)" *ngIf=" !i.isOnline ">{{i.name}}</li>
+                </ng-container>
+            </ul>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>    
+</div>

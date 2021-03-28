@@ -17,6 +17,8 @@ import { LoggerFormComponent } from './logger/logger-form/logger-form.component'
 import { LoggerListComponent } from './logger/logger-list/logger-list.component';
 import { Accounts } from "./logger/accounts.service";
 import { LoggerService } from './logger/logger.service';
+import { Assignment5Component } from './assignment5/assignment5.component';
+import { UsersService } from "./assignment5/myservices/users.service";
 
 @NgModule({
   declarations: [
@@ -31,13 +33,14 @@ import { LoggerService } from './logger/logger.service';
     EvenComponent,
     LoggerComponent,
     LoggerFormComponent,
-    LoggerListComponent
+    LoggerListComponent,
+    Assignment5Component
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [Accounts,LoggerService],
-  bootstrap: [LoggerComponent]
+  providers: [UsersService],
+  bootstrap: [Assignment5Component]
 })
 export class AppModule { }
