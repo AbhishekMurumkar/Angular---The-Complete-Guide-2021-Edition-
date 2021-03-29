@@ -24,3 +24,4 @@
         * #### Using Set Keyword: Used to execute a method whenever a property of HTML element changes.
     * NgSwitch Directive:
 15. [DEPENDENCY INJECTION & SERVICES](./9-SERVICES.MD)
+16. [Routing](./10-Routing.md)
