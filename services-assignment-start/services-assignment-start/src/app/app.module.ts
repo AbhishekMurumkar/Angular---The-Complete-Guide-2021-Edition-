@@ -19,7 +19,7 @@ import { CounterService } from './services/counter.service';
     BrowserModule,
     FormsModule,
   ],
-  providers: [UsersService,CounterService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

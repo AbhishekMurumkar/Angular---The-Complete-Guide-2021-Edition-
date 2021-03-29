@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { RecipeServiceService } from '../../myservices/recipe-service.service';
 import { Recipe } from '../recipe.modal';
 
 
@@ -9,10 +11,12 @@ import { Recipe } from '../recipe.modal';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  @Input() activeRecipe:Recipe;
-  constructor() { }
+  activeRecipe:Recipe;
+  constructor(private rs:RecipeServiceService) { 
+  }
 
   ngOnInit(): void {
+    this.rs.recipeSelected.subscribe(recipe=>this.activeRecipe=recipe)
   }
 
 }
