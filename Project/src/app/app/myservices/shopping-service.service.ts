@@ -16,8 +16,8 @@ export class ShoppingServiceService {
   getIngredients(){
     return this.ingredients.slice();
   }
-  addIngredient(ing:Ingredient){
-    this.ingredients.push(ing);
+  addIngredients(ing:Ingredient[]){
+    this.ingredients.push(...ing);
     this.updateIngredinetsList.emit(this.ingredients.slice())
   }
   setActiveIngredient(index:number){

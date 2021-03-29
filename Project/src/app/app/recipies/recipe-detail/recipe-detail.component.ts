@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { RecipeServiceService } from '../../myservices/recipe-service.service';
+import { ShoppingServiceService } from '../../myservices/shopping-service.service';
 import { Recipe } from '../recipe.modal';
 
 
@@ -12,11 +12,15 @@ import { Recipe } from '../recipe.modal';
 export class RecipeDetailComponent implements OnInit {
 
   activeRecipe:Recipe;
-  constructor(private rs:RecipeServiceService) { 
+  constructor(private rs:RecipeServiceService,private ss:ShoppingServiceService) { 
   }
 
   ngOnInit(): void {
-    this.rs.recipeSelected.subscribe(recipe=>this.activeRecipe=recipe)
+    this.rs.recipeSelected.subscribe((recipe:Recipe)=>{console.log(recipe);this.activeRecipe=recipe})
   }
 
+  addToSlist(){
+    this.ss.addIngredients(this.activeRecipe.ingredients)
+    alert("Added to Shopping list");
+  }
 }
