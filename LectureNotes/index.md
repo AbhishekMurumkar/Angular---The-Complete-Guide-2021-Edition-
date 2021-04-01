@@ -25,3 +25,5 @@
     * NgSwitch Directive:
 15. [DEPENDENCY INJECTION & SERVICES](./9-SERVICES.MD)
 16. [Routing](./10-Routing.md)
+    * Process of Adding Routing in angular
+    * Routing with Router Links
