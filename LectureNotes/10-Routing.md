@@ -186,4 +186,24 @@ this.router.navigate(
 * redirection can be done via adding property ```redirectTo:'some-path'```
 * wild card path can be denoted as ```"**"```
 * thus the 404 page can be handled by constructing a path entry in our routes with wild card as path
-* ## Always make sure that wildcard path must be the last one in the routes array of your angular application.
+* ### Always make sure that wildcard path must be the last one in the routes array of your angular application.
+
+##  Important: Redirection Path Matching
+
+By default, Angular matches paths by prefix. That means, that the following route will match both ```/recipes```  and just ```/``` 
+
+```json
+{ path: '', redirectTo: '/somewhere-else' }
+```
+
+Actually, Angular will give you an error here, because that's a common gotcha: This route will now ALWAYS redirect you! Why?
+
+Since the default matching strategy is "prefix" , Angular checks if the path you entered in the URL does start with the path specified in the route. Of course every path starts with ''  (Important: That's no whitespace, it's simply "nothing").
+
+To fix this behavior, you need to change the matching strategy to "full" :
+
+```json
+{ path: '', redirectTo: '/somewhere-else', pathMatch: 'full' }
+```
+
+Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
