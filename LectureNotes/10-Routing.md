@@ -158,3 +158,9 @@ In [project](../routing-start/src/app), we have to implement sections as followi
 ## Note: there is no need to use unsubscribe method in approach 2 since angular will take care of it
 
 # Difference between Params and QueryParams in Angular ?
+
+## Setting Child (Nested) Routes:
+
+* you can do this via ```children``` property. Ex [code]("../routing-start/src/app/app.module.ts")
+* In general, all the routes are being displayed in angular is ```router-outlet``` hook. Thus ```<router-outlet></router-outlet>``` will load all the paths with out having children property(that is paths present in top most level)
+* Thus to load the child routes in a parent component, you need to call hook again in parent to load all the child routes.

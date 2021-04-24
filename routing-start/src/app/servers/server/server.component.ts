@@ -16,8 +16,11 @@ export class ServerComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params:Params)=>{
-        let id = parseInt( params["id"] );
-        this.server = this.serversService.getServer(id);
+        if(params["id"]!=undefined)
+        {
+          let id = parseInt( params["id"] );
+          this.server = this.serversService.getServer(id);
+        }
       }
     )
     // this.server = this.serversService.getServer(1);
