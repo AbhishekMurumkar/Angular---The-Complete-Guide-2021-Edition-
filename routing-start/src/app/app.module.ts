@@ -14,12 +14,24 @@ import { ServersService } from './servers/servers.service';
 
 const appRoutes:Routes=[
   {
+    path:"users/:id/:name",
+    component:UserComponent
+  },
+  {
     path:"users",
     component:UsersComponent
   },
   {
     path:"servers",
-    component:ServersComponent
+    component:ServersComponent,
+  },  
+  {
+    path:"servers/:id",
+    component:ServerComponent
+  },
+  {
+    path:"servers/:id/edit",
+    component:EditServerComponent
   },
   {
     path:"", //this will be loaded by default since path is empty

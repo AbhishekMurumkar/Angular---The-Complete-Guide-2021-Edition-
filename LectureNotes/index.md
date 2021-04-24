@@ -27,3 +27,10 @@
 16. [Routing](./10-Routing.md)
     * Process of Adding Routing in angular
     * Routing with Router Links
+    * Navigating via ```Router.navigate()```
+    * Using Relative Paths
+    * Passing Paramters to URL
+    * Getting URL Params from snapshot
+    * Getting URL Params Reactively ( & Cleaning of routeSubscription)
+    * Query params and Fragments: Passing & Getting
+    * Setting up Child (Nested) Routes
