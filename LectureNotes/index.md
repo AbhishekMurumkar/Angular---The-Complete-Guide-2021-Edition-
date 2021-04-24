@@ -38,3 +38,4 @@
     * Redirecting and Wildcard Routes
     * Important: Redirection Path Matching
     * Outsourcing Routes
+    * Introduction to Guards

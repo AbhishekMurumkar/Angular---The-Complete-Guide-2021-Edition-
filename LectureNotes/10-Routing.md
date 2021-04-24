@@ -209,4 +209,30 @@ To fix this behavior, you need to change the matching strategy to "full" :
 Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
 
 ## Outsourcing Routes
-In general we will create a new files to store all the routes of angular application with path as ```app/``` and name as ```app-routing.module.ts```
+
+* In general we will create a new files to store all the routes of angular application with path as ```app/``` and name as ```app-routing.module.ts```
+* In ```app-routing.module.ts``` file, you need to import the RouterModule declared in the component, which is re-used in imports array of NgModule of ```app.module.ts``` file.
+
+## Introduction To Guards
+
+* The Guard is nothing but to load the view only if a given condition is true.
+* The guard is code ran before loading of each component where we maintain some checks to decide a component to load or not
+* ### Protecting Routes : 
+    * Add ```auth-guard.service.ts``` in app/ folder
+    * Now in order to create a guard create a class which implements ```CanActivate``` interface
+    * This class now must override a method called as ```canActivate```
+    * This method receives arguements called as ```ActivatedRouteSnapshot``` and ```RouterStateSnapshot```
+    * The above methods returns an output (anyone of the following) to conclude to angular to load an route or not.
+        1. Observable<boolean>
+        2. Promise<boolean>
+        3. boolean
+    * Example : [code]("../routing-start/src/app/auth-guard.service.ts")
+    * The above method can run asynchronously or synchronously
+    * Thus to apply the guards on your routes 
+        1. go to the routes array of your angular application
+        2. declare the property ```canActivate``` with value as the name of the class of the guard file(In our case it is AuthGuard) on all root level routes which you want guard
+        3. The canActivate can guard the child routes as well.
+        4. Example check AuthGuard (code to build Gaurd) [here]("../routing-start/src/app/auth-guard.service.ts") and to implement on routes can be found [here]("../routing-start/src/app/app-routing.module.ts") (check servers path in file)
+    * Protecting only child Routes and showing only parent component. Replace ```canActivate``` to ```canActivateChild``` in following files
+        1. auth-guard.service.ts
+        2. property used on routes array

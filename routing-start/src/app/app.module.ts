@@ -11,9 +11,12 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { Page404Component } from './page404/page404.component';
 
-import { ServersService } from './servers/servers.service';
 
-import {AppRoutes} from "./app-routing.module";
+import { AppRoutes } from "./app-routing.module";
+import { ServersService } from './servers/servers.service';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth-guard.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,7 @@ import {AppRoutes} from "./app-routing.module";
     FormsModule,
     AppRoutes
   ],
-  providers: [ServersService],
+  providers: [ServersService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
