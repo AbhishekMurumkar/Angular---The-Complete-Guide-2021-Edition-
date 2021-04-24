@@ -180,3 +180,10 @@ this.router.navigate(
 * Values present for the queryParamsHandling :
     1. preserve : previous query params will be used as is.
     2. merged : previous query params will be merged with values with new ones.
+
+## Redirecting and Wildcard Routes : 404 Handling
+
+* redirection can be done via adding property ```redirectTo:'some-path'```
+* wild card path can be denoted as ```"**"```
+* thus the 404 page can be handled by constructing a path entry in our routes with wild card as path
+* ## Always make sure that wildcard path must be the last one in the routes array of your angular application.

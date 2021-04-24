@@ -11,12 +11,12 @@ import { UserComponent } from './users/user/user.component';
 import { EditServerComponent } from './servers/edit-server/edit-server.component';
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
+import { Page404Component } from './page404/page404.component';
 
 const appRoutes:Routes=[
 
   {
-    path:"users",
-    component:UsersComponent,
+    path:"users", component:UsersComponent,
     children:[
       {
         path:":id/:name",
@@ -25,8 +25,7 @@ const appRoutes:Routes=[
     ]
   },
   {
-    path:"servers",
-    component:ServersComponent,
+    path:"servers", component:ServersComponent,
     children:[
       {
         path:":id",
@@ -39,8 +38,17 @@ const appRoutes:Routes=[
     ]
   },
   {
-    path:"", //this will be loaded by default since path is empty
+    path:"home", //this will be loaded by default since path is empty
     component:HomeComponent
+  },
+  {
+    path:"",
+    redirectTo:"home",
+    pathMatch:"full"
+  },
+  {
+    path:"**", //wild card route
+    component:Page404Component
   }
 ]
 @NgModule({
@@ -51,7 +59,8 @@ const appRoutes:Routes=[
     ServersComponent,
     UserComponent,
     EditServerComponent,
-    ServerComponent
+    ServerComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
