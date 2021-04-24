@@ -226,13 +226,13 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
         1. Observable<boolean>
         2. Promise<boolean>
         3. boolean
-    * Example : [code]("../routing-start/src/app/auth-guard.service.ts")
+    * Example : [code](../routing-start/src/app/auth-guard.service.ts)
     * The above method can run asynchronously or synchronously
     * Thus to apply the guards on your routes 
         1. go to the routes array of your angular application
         2. declare the property ```canActivate``` with value as the name of the class of the guard file(In our case it is AuthGuard) on all root level routes which you want guard
         3. The canActivate can guard the child routes as well.
-        4. Example check AuthGuard (code to build Gaurd) [here]("../routing-start/src/app/auth-guard.service.ts") and to implement on routes can be found [here]("../routing-start/src/app/app-routing.module.ts") (check servers path in file)
+        4. Example check AuthGuard (code to build Gaurd) [here](../routing-start/src/app/auth-guard.service.ts) and to implement on routes can be found [here](../routing-start/src/app/app-routing.module.ts) (check servers path in file)
     * Protecting only child Routes and showing only parent component. Replace ```canActivate``` to ```canActivateChild``` in following files
         1. auth-guard.service.ts
         2. property used on routes array

@@ -19,4 +19,3 @@ Feature - service
    1. Make a proper structural for recipe,as it would be used in through out the project. this is called as modal.
    2. thus create a file ```recipe.modal.ts``` in recipies component's folder
 5. ShoppingList : created Ingredients modal in app/shared folder as it can be used in both recipies and shopping list components
-
