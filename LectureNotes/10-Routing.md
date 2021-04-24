@@ -207,3 +207,6 @@ To fix this behavior, you need to change the matching strategy to "full" :
 ```
 
 Now, you only get redirected, if the full path is ''  (so only if you got NO other content in your path in this example).
+
+## Outsourcing Routes
+In general we will create a new files to store all the routes of angular application with path as ```app/``` and name as ```app-routing.module.ts```

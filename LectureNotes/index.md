@@ -37,3 +37,4 @@
     * Preserving the queryparams of parent component to child
     * Redirecting and Wildcard Routes
     * Important: Redirection Path Matching
+    * Outsourcing Routes
