@@ -164,3 +164,19 @@ In [project](../routing-start/src/app), we have to implement sections as followi
 * you can do this via ```children``` property. Ex [code]("../routing-start/src/app/app.module.ts")
 * In general, all the routes are being displayed in angular is ```router-outlet``` hook. Thus ```<router-outlet></router-outlet>``` will load all the paths with out having children property(that is paths present in top most level)
 * Thus to load the child routes in a parent component, you need to call hook again in parent to load all the child routes.
+
+## Preserving the queryparams of parent component to child
+
+* Example:
+
+```typescript
+this.router.navigate(
+    ..route,
+    ..,
+    queryParamsHandling:"preserve" // this is append the query params when current navigate method is used
+)
+```
+
+* Values present for the queryParamsHandling :
+    1. preserve : previous query params will be used as is.
+    2. merged : previous query params will be merged with values with new ones.

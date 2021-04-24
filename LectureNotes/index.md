@@ -34,3 +34,5 @@
     * Getting URL Params Reactively ( & Cleaning of routeSubscription)
     * Query params and Fragments: Passing & Getting
     * Setting up Child (Nested) Routes
+    * Preserving the queryparams of parent component to child
+    * Redirecting and Wildcard Routes
