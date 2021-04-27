@@ -294,7 +294,9 @@ Solution For Above Catch
     //replace line 3 from above to below code to get dynamic data
     this.route.snapshot.data.subscribe((data:Data)=>{msg = data['message']});
     ```
+
 Example : 
+
 1. [canDeactiveComponent Code](../routing-start/src/app/servers/edit-server/can-deactivate.service.ts)
 2. [CanDeactive as property](../routing-start/src/app/app-routing.module.ts)
 
@@ -320,3 +322,4 @@ Example :
     ```{path:"xxx",component:"yyy",data:{"server":{resolved data} }```
     10. Now server is just a custom property defined on a route. You can get this route's component via (In ngOnInit)```this.route.data.subscribe((data:Data)=>{console.log("dynamic data from route:"+data["server"])})```
     then loads component in UI.
+    Example [Resolver code](../routing-start/src/app/servers/server/server-resolver.service.ts), [Resolver Implementation in component](../routing-start/src/app/servers/server/server.component.ts)(see ngOnInit function)

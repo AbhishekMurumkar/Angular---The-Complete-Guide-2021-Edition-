@@ -42,3 +42,4 @@
     * Controlling Navigation with canDeactivate
     * Passing Static data to route
     * Passing Dynamic Data to route when loaded, with resolve Guard
+    * Understanding Location Strategies
