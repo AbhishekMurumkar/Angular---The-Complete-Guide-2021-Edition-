@@ -39,3 +39,4 @@
     * Important: Redirection Path Matching
     * Outsourcing Routes
     * Introduction to Guards
+    * Controlling Navigation with canDeactivate

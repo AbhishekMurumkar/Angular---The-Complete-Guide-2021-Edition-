@@ -234,5 +234,51 @@ Now, you only get redirected, if the full path is ''  (so only if you got NO oth
         3. The canActivate can guard the child routes as well.
         4. Example check AuthGuard (code to build Gaurd) [here](../routing-start/src/app/auth-guard.service.ts) and to implement on routes can be found [here](../routing-start/src/app/app-routing.module.ts) (check servers path in file)
     * Protecting only child Routes and showing only parent component. Replace ```canActivate``` to ```canActivateChild``` in following files
-        1. auth-guard.service.ts
-        2. property used on routes array
+        1. [auth-guard.service.ts](../routing-start/src/app/auth.service.ts)
+        2. [property used on routes array](../routing-start/src/app/app-routing.module.ts)
+
+## Controlling Navigation with canDeactivate
+
+* The Above Discusses whether we can enter into a route or not.. This one discusses whether we can leave a route or not.. this is especially seen whenever you want to prevent user going to other routes whenever he fills a form etc.
+* The catch of using the canDeactivate is that 
+
+1. first you need to access the code of component to really know that component data was saved or not
+2. But Here we need a guard to protect the route if in case the component data was not saved. Thus here we need access the component data in a guard which is basically a service.
+3. The catch here is how to get component's data in a service. But we can do so.
+
+Solution For Above Catch
+
+1. create a service.ts file
+2. this containes an interface (which can imported), this interface must have empty definition method called as ```canDeactivate```. This method must return Observable<boolean> | Promise<boolean> | boolean (Note this return is same as of canAcitvate Guard as we seen above)
+3. Now lets implement above interface with a class (in same file) implementing above interface along ```CanDeactivate``` interface from angular. Example
+
+    ```typescript
+    export interface Int1{
+        canDeactivate:()=>Observable<boolean> | Promise<boolean> | boolean;// after => indicating return type of function
+    }
+    export class MyClass implements CanDeactivate<Int1>
+    /**
+     * CanDeactivate is a Generic Type, hence we are telling angular to convert it to our interface type
+     * This tells angular to search for the method we declared in our interface must be overriden in our class
+     * This setup now helps us to connect our component data to canDeactivate Guard
+     * Angular Router will use overriden canDeactivate method once we try to leave a route
+     * Thus canDeactivate method should have component (type as same as Interface), currentRoute/ActivatedRouteSnapshot and RouterStateSnaphot(current and next) as arguements
+    */
+    {
+        canDeactivate(
+            comp: Int1,
+            currentRoute: ActivatedRouteSnaphost,
+            currentState: RouterStateSnapshot,
+            nextState  ?: RouterStateSnaphost //this is a optional paramter
+        ):Observable<boolean>|Promise<boolean>|boolean //this is the return type of method
+        {
+            return comp.canDeactivate();// this statement makes Angular Router to call canDeactivate on component.
+            // this is why we created interface in first place, as Angular Router can execute canDeactivate in our service
+            // and also check component we're currently on has canDeactivate method too.
+        }
+    }
+    ```
+
+4. Now implement canDeactivate on your routes in route array as following ```{path:"some",component:"xxx",canDeactivate:[MyClass]}``` and declare ```MyClass``` from in ```providers``` array of ```app.module.ts``` file
+5.  Now MyClass to work and stopping changing the route, the component which you declared ```canDeactivate``` as property on path's array, that component's class should implement our own interface Int1
+6. Thus from above step we need to override the method canDeactive in our component.
