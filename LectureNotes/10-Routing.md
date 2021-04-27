@@ -323,3 +323,15 @@ Example :
     10. Now server is just a custom property defined on a route. You can get this route's component via (In ngOnInit)```this.route.data.subscribe((data:Data)=>{console.log("dynamic data from route:"+data["server"])})```
     then loads component in UI.
     Example [Resolver code](../routing-start/src/app/servers/server/server-resolver.service.ts), [Resolver Implementation in component](../routing-start/src/app/servers/server/server.component.ts)(see ngOnInit function)
+
+## Location Strategies:
+
+Simply put declaring the domain name to use when angular app is deployed. So that routes be loaded properly. This also includes using # urls. By using this type of url you'll inform to server which has hosted your application to only consider route before hash, after hash angular consumes it and loads the page.
+ex : http://localhost:4200/#/users
+path consumed by server : http://localhost:4200/
+path consumed by angular: /users
+### thus here for 404 error, index page will be shown
+In order to use this you need to configure your RouterModule as following
+In ```app-routing.module.ts``` change RouterModule(In NgModule) to ```RouterModule.forRoot(appRoutes,{useHash:true})```
+
+## Wrap UP

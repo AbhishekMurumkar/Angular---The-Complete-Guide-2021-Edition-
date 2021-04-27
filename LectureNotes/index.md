@@ -43,3 +43,4 @@
     * Passing Static data to route
     * Passing Dynamic Data to route when loaded, with resolve Guard
     * Understanding Location Strategies
+    * Wrap UP
