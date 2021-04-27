@@ -282,3 +282,41 @@ Solution For Above Catch
 4. Now implement canDeactivate on your routes in route array as following ```{path:"some",component:"xxx",canDeactivate:[MyClass]}``` and declare ```MyClass``` from in ```providers``` array of ```app.module.ts``` file
 5.  Now MyClass to work and stopping changing the route, the component which you declared ```canDeactivate``` as property on path's array, that component's class should implement our own interface Int1
 6. Thus from above step we need to override the method canDeactive in our component.
+
+## Passing Static Data to route when loaded
+
+1. ```{path:"xxx",component:"yyy",data:{"message":"your custom message"}}```
+2. Now in component ```yyy```, import ```ActivatedRoute``` as ```constructor(private route:ActivatedRoute){}```
+3. then in ```ngOnInit```, you can get data declared as property in path's array from following : ```let msg = this.route.snapshot.data["message"]```
+4. Thus for chaging data, you need to subscribe for data in above point 3
+
+    ```typescript
+    //replace line 3 from above to below code to get dynamic data
+    this.route.snapshot.data.subscribe((data:Data)=>{msg = data['message']});
+    ```
+Example : 
+1. [canDeactiveComponent Code](../routing-start/src/app/servers/edit-server/can-deactivate.service.ts)
+2. [CanDeactive as property](../routing-start/src/app/app-routing.module.ts)
+
+## Passing Dynamic Data to route when loaded, with resolve Guard
+
+1. Dynamic data means, data which has to be fetched before a route can be displayed
+2. Example, in our case, lets say we have list and types of servers available.. if all those information did contained in the database, then for each click on server's tab, we need to fetch respective server type and their data before loading the individual server tab.
+3. In this case, we can directly fetch remote data from ngOnInit and reload the page when we got data. In this case initially the route is displayed in UI with empty data,however when we get data the component is reloaded with data.
+4. Alternate is to use Resolve Servive, this service will simply fetch the data which is obtained in future and then loads the component when data is obtained.
+5. creating resolver in angular
+    1. create a custom service file```ng g s server-resolver```
+    2. create a class in it say "MyResolver" which needs to implement interface ```Resolve``` from ```@angular/router```
+    3. The Interface is generic type, hence declare data type that your component going to receiver in fetch, in my case it is ```Resolve<{id:number, name:string, status:string}>``` (type of server)
+    4. This interface demands us to override method ```resolve``` which takes 2 Params
+        4.1 ActivatedRoute
+        4.2 RouterStateSnapshot
+    5. the above function should return ```Observable<{object type of future data}>|Promise{object type of future data}|{object type of future data}```
+    6. this resolver reloads each time when there is a change in component
+    7. then declare our resolver service in ```providers``` array of ```app.module.ts``` file.
+    8. Now for the route you want to use in routes/path array declare new property ```resolve``` on that route with your service name defined in point 1. 
+    ```{path:"xxx",component:"yyy",resolve:{"server":ServerResolverService} }```
+    9. Whenever that route is called, angular first resolves the function present in defined resolve service and gets data and stored in "key" of resolve object,i.e: server acting/behaving like a data property on the route.thus it would be like 
+    ```{path:"xxx",component:"yyy",data:{"server":{resolved data} }```
+    10. Now server is just a custom property defined on a route. You can get this route's component via (In ngOnInit)```this.route.data.subscribe((data:Data)=>{console.log("dynamic data from route:"+data["server"])})```
+    then loads component in UI.

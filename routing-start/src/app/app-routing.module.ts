@@ -10,6 +10,7 @@ import { ServerComponent } from './servers/server/server.component';
 import { Page404Component } from './page404/page404.component';
 import { AuthGuard } from "./auth-guard.service";
 import { CanDeactivateGuard } from "./servers/edit-server/can-deactivate.service";
+import { ServerResolverService } from "./servers/server/server-resolver.service";
 
 const appRoutes:Routes=[
 
@@ -30,7 +31,8 @@ const appRoutes:Routes=[
     children:[
       {
         path:":id",
-        component:ServerComponent
+        component:ServerComponent,
+        resolve:{"serverResolver":ServerResolverService}
       },
       {
         path:":id/edit",

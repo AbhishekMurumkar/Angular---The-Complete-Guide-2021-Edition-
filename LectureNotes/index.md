@@ -38,5 +38,7 @@
     * Redirecting and Wildcard Routes
     * Important: Redirection Path Matching
     * Outsourcing Routes
-    * Introduction to Guards
+    * Introduction to Guards (CanActivateGuard, CanActivateChildGuard)
     * Controlling Navigation with canDeactivate
+    * Passing Static data to route
+    * Passing Dynamic Data to route when loaded, with resolve Guard
