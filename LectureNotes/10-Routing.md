@@ -2,6 +2,8 @@
 
 # Never Let user to click ```<a>``` html tag related to your component as this will load entire application
 
+## Note: You can find all code implementations [here](../routing-routing-start/src)
+
 ## Background :
 In [project](../routing-start/src/app), we have to implement sections as following
 * Home
