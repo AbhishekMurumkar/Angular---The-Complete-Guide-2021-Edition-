@@ -19,3 +19,11 @@ Feature - service
    1. Make a proper structural for recipe,as it would be used in through out the project. this is called as modal.
    2. thus create a file ```recipe.modal.ts``` in recipies component's folder
 5. ShoppingList : created Ingredients modal in app/shared folder as it can be used in both recipies and shopping list components
+
+## Continuation Section 12 : Adding Routting Features to Project
+
+### Task : 
+
+1. Add Routes that are related to your application in routes array present in ```app-routing.module.ts``` in Project Folder.
+2.  After build routes, update the header to work on routes instead of ngIf blocks.
+3.  Mark Appropriate Header link with active router link (Hint use routerLinkActive directive)

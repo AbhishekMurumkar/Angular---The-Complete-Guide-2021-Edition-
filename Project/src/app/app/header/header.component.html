@@ -14,27 +14,27 @@
 
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li [ngClass]="{'nav-item':true,'active':currentView==='recipe'}">
-        <a class="nav-link" (click)="changeView('recipe')">
-            Recipe
+      <li routerLinkActive="active">
+        <a class="nav-link" routerLink="/recipies">
+            Recipies
             <span class="sr-only" *ngIf="currentView === 'recipe'">(current)</span>
         </a>
       </li>
-      <li [ngClass]="{'nav-item':true,'active':currentView==='shoopingList'}">
-        <a class="nav-link" (click)="changeView('shoopingList')">
-            Shooping List
+      <li routerLinkActive="active">
+        <a class="nav-link" routerLink="/shoppinglist">
+            Shopping List
         </a>
       </li>
     </ul>
   </div>
   <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" appDropdown>
+      <a  class="dropdown-toggle" data-toggle="dropdown" role="button" appDropdown>
         Manage <span class="caret"></span>
       </a>
       <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Save Data</a></li>
-        <li><a href="#">Fetch Data</a></li>
+        <li><a >Save Data</a></li>
+        <li><a >Fetch Data</a></li>
       </ul>
     </li>
   </ul>

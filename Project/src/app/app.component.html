@@ -1,9 +1,10 @@
-<app-header (viewChange)="navigate($event)"></app-header>
+<app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <app-recipies *ngIf=" currentView==='recipe' "></app-recipies>
-      <app-shopping-list *ngIf=" currentView!=='recipe' "></app-shopping-list>
+      <!-- <app-recipies *ngIf=" currentView==='recipe' "></app-recipies>
+      <app-shopping-list *ngIf=" currentView!=='recipe' "></app-shopping-list> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

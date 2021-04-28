@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +7,16 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   currentView:string='recipe';
-  @Output() viewChange = new EventEmitter<string>();
+  // @Output() viewChange = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  changeView(param:string){
-    this.currentView=param;
-    this.viewChange.emit(param);
-  }
+  // changeView(param:string){
+  //   this.currentView=param;
+  //   this.viewChange.emit(param);
+  // }
 
 }
