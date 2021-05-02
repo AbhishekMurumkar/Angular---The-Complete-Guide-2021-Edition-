@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { RecipeServiceService } from '../../myservices/recipe-service.service';
 
 import { Recipe } from '../recipe.modal';
@@ -18,7 +19,7 @@ export class RecipeListComponent implements OnInit {
   // ];
   // @Output() activeRecipe = new EventEmitter<Recipe>();
 
-  constructor(private rs:RecipeServiceService) { }
+  constructor(private rs:RecipeServiceService,private router:Router) { }
 
   ngOnInit(): void {
     this.recipies = this.rs.getRecipies();
@@ -29,8 +30,9 @@ export class RecipeListComponent implements OnInit {
     // this.activeRecipeIndex = index;
     // // console.log("User click recipe no."+index,this.recipies[index]);
     // this.activeRecipe.emit(this.recipies[index]);
-    this.rs.setActiveRecipe(index);
-    this.activeRecipeIndex=index;
+    // this.rs.setActiveRecipe(index);
+    // this.activeRecipeIndex=index;
+   this.router.navigate(["/recipies",index]) 
   }
 
 }

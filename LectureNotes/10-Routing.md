@@ -337,3 +337,4 @@ In order to use this you need to configure your RouterModule as following
 In ```app-routing.module.ts``` change RouterModule(In NgModule) to ```RouterModule.forRoot(appRoutes,{useHash:true})```
 
 ## Wrap UP
+Check Routing Implementation in Project App from section : [here](../LectureNotes/3-Intro-To-Project.md#Routes)

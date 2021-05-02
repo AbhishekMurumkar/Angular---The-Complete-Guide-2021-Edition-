@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute,Params } from '@angular/router';
 import { RecipeServiceService } from '../../myservices/recipe-service.service';
 import { ShoppingServiceService } from '../../myservices/shopping-service.service';
 import { Recipe } from '../recipe.modal';
@@ -12,11 +13,15 @@ import { Recipe } from '../recipe.modal';
 export class RecipeDetailComponent implements OnInit {
 
   activeRecipe:Recipe;
-  constructor(private rs:RecipeServiceService,private ss:ShoppingServiceService) { 
+  constructor(
+    private rs:RecipeServiceService,
+    private ss:ShoppingServiceService,
+    private activeRoute:ActivatedRoute) { 
   }
 
   ngOnInit(): void {
-    this.rs.recipeSelected.subscribe((recipe:Recipe)=>{console.log(recipe);this.activeRecipe=recipe})
+    // this.rs.recipeSelected.subscribe((recipe:Recipe)=>{this.activeRecipe=recipe})
+    this.activeRoute.params.subscribe((params:Params)=>this.activeRecipe=this.rs.getRecipe(+params["id"]));
   }
 
   addToSlist(){

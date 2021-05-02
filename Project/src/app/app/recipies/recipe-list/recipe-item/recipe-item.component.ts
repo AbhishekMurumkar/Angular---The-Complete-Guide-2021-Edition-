@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+// import { ActivatedRouteSnapshot } from '@angular/router';
 import { Recipe } from '../../recipe.modal';
 
 @Component({
@@ -8,13 +9,11 @@ import { Recipe } from '../../recipe.modal';
 })
 export class RecipeItemComponent implements OnInit {
 
-
   @Input() recipe:Recipe;
-  @Input() myClass:string;
+  @Input() index:number;
  
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

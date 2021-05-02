@@ -19,8 +19,7 @@
     <div *ngFor="let recipeElement of recipies; let i = index">
       <app-recipe-item
         [recipe]="recipeElement"
-        (click)="setActiveRecipe(i)"
-        [myClass]="{ activeRecipe: i == activeRecipeIndex }"
+        [routerLink]="[i]"
       ></app-recipe-item>
     </div>
   </div>
