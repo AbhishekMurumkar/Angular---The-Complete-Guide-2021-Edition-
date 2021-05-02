@@ -44,3 +44,4 @@
     * Passing Dynamic Data to route when loaded, with resolve Guard
     * Understanding Location Strategies
     * Wrap UP
+17. [Deep Dive in Observables](./13.Observables.md)
