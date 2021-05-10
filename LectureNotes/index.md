@@ -45,3 +45,6 @@
     * Understanding Location Strategies
     * Wrap UP
 17. [Deep Dive in Observables](./13.Observables.md)
+    * what are those
+    * building custom obseravables
+    * Operators
