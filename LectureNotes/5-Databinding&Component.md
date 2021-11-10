@@ -155,6 +155,8 @@ In component ts file,
 * This hook is used to show the html content present in our custom angular tags to browser/front end..
 * In general the html content present in between the custom html tags are lost, Angular doesnt care about them.
 * If you use this hook then angular will display this HTML as well
+* this is used when you have tabs where you need to execute large code where you dont want to pass data to other component
+* In complex code, property binding is not really best solution as angular will escape HTML tags to prevent Cross-Site Scripting attacks from happening and you need to figure a differnt way out. This is where ng-content comes across
 
 # [NgContent With ContentChild Hooks](contentChild)
 
