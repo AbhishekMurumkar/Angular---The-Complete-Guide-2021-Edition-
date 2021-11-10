@@ -2,6 +2,8 @@
   <!-- <div class="panel-heading">{{ element.name }}</div> -->
   <div class="panel-heading" #panelHeading>{{ name }}</div>
   <div class="panel-body">
-    <ng-content></ng-content>
+    <ng-content>
+      <!-- loading the content we got from the parent component, that is elementBlock -->
+    </ng-content>
   </div>
 </div>

@@ -17,6 +17,8 @@
         [element]="i"
         [name]="i.name"
       >
+      <!-- Belowblock of code is being sent from root(app)component to child(server-element) -->
+      <!-- this is been rendered by child via ngcontent directive -->
         <p #elementBlock>
           <strong *ngIf="i.type === 'server'" style="color: red">{{
             i.content
